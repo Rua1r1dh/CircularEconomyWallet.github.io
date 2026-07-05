@@ -38,6 +38,7 @@ padding:15px 30px;
 border-radius:8px;
 text-decoration:none;
 font-size:1.1rem;
+display:inline-block;
 }
 
 .section{
@@ -59,114 +60,29 @@ border-radius:10px;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
-footer{
-padding:30px;
-font-size:0.9rem;
-color:#64748b;
+.waitlist{
+padding:60px 20px;
+max-width:700px;
+margin:auto;
 }
-</style>
-</head>
 
-<body>
+.form-box{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
 
-<div class="hero">
-<h1>🌍 Circular Economy Wallet</h1>
+.form-box input,
+.form-box textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:8px;
+box-sizing:border-box;
+font-size:16px;
+}
 
-<p class="tagline">
-Rewarding people for buying second-hand, refurbished and repaired products.
-</p>
-
-<a class="button" href="#">
-Join the Waiting List
-</a>
-</div>
-
-<div class="section">
-<h2>Why?</h2>
-
-<p>
-Millions of usable products are discarded every year while consumers face rising costs.
-Circular Economy Wallet aims to reward sustainable purchasing and support the circular economy.
-</p>
-</div>
-
-<div class="section">
-<h2>How It Works</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>♻ Buy Used</h3>
-<p>Shop through approved circular economy retailers.</p>
-</div>
-
-<div class="card">
-<h3>💰 Earn Rewards</h3>
-<p>Receive cashback and incentives for sustainable purchases.</p>
-</div>
-
-<div class="card">
-<h3>📊 Track Impact</h3>
-<p>See your carbon savings, waste reduction and community impact.</p>
-</div>
-
-</div>
-</div>
-
-<div class="section">
-<h2>Future Vision</h2>
-
-<p>
-Connecting charity shops, refurbished electronics, repair services and sustainability-focused employers in one platform.
-</p>
-
-</div>
-
-<footer>
-Built by Circular Economy Wallet | 2026
-</footer>
-  <div class="waitlist" id="waitlist">
-
-<h2>Join The Waiting List</h2>
-
-<p>
-Be one of the first people to hear about Circular Economy Wallet.
-</p>
-
-<div class="form-box">
-
-<form action="https://formspree.io/f/xzdlorvr" method="POST">
-
-<input
-type="text"
-name="name"
-placeholder="Your Name"
-required>
-
-<input
-type="email"
-name="email"
-placeholder="Your Email"
-required>
-
-<textarea
-name="message"
-rows="4"
-placeholder="What interests you most about Circular Economy Wallet?"></textarea>
-
-<button
-type="submit"
-class="submit-btn">
-
-Join Waitlist
-
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</body>
-</html>
+.submit-btn{
+background:#0f766e;
