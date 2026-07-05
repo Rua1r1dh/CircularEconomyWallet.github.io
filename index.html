@@ -6,13 +6,14 @@
 <title>Circular Economy Wallet</title>
 
 <style>
+
 body{
 font-family:Arial,sans-serif;
-background:#f4f7f4;
 margin:0;
 padding:0;
-text-align:center;
+background:#f5f7f5;
 color:#1e293b;
+text-align:center;
 }
 
 .hero{
@@ -24,11 +25,13 @@ margin:auto;
 h1{
 font-size:3rem;
 color:#0f766e;
+margin-bottom:20px;
 }
 
 .tagline{
 font-size:1.3rem;
-margin-bottom:30px;
+line-height:1.6;
+margin-bottom:40px;
 }
 
 .button{
@@ -38,10 +41,12 @@ padding:15px 30px;
 border-radius:8px;
 text-decoration:none;
 font-size:1.1rem;
+cursor:pointer;
+display:inline-block;
 }
 
 .section{
-padding:50px 20px;
+padding:60px 20px;
 max-width:900px;
 margin:auto;
 }
@@ -64,67 +69,164 @@ padding:30px;
 font-size:0.9rem;
 color:#64748b;
 }
+
+/* Modal */
+
+.modal{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.modal-content{
+background:white;
+max-width:500px;
+margin:10% auto;
+padding:30px;
+border-radius:12px;
+position:relative;
+}
+
+.close{
+position:absolute;
+right:15px;
+top:10px;
+font-size:30px;
+cursor:pointer;
+}
+
+.modal input{
+width:90%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+.modal button{
+background:#0f766e;
+color:white;
+border:none;
+padding:12px 24px;
+border-radius:8px;
+cursor:pointer;
+font-size:1rem;
+}
+
 </style>
+
 </head>
 
 <body>
 
 <div class="hero">
+
 <h1>🌍 Circular Economy Wallet</h1>
 
 <p class="tagline">
-Rewarding people for buying second-hand, refurbished and repaired products.
+Earn rewards for buying second-hand, refurbished and repaired products while reducing waste and supporting the circular economy.
 </p>
 
-<a class="button" href="#">
+<a class="button" onclick="openModal()">
 Join the Waiting List
 </a>
+
 </div>
 
 <div class="section">
-<h2>Why?</h2>
 
-<p>
-Millions of usable products are discarded every year while consumers face rising costs.
-Circular Economy Wallet aims to reward sustainable purchasing and support the circular economy.
-</p>
-</div>
-
-<div class="section">
-<h2>How It Works</h2>
+<h2>Why Circular Economy Wallet?</h2>
 
 <div class="cards">
 
 <div class="card">
 <h3>♻ Buy Used</h3>
-<p>Shop through approved circular economy retailers.</p>
+<p>Support reuse and reduce waste.</p>
 </div>
 
 <div class="card">
 <h3>💰 Earn Rewards</h3>
-<p>Receive cashback and incentives for sustainable purchases.</p>
+<p>Receive cashback from circular economy purchases.</p>
 </div>
 
 <div class="card">
 <h3>📊 Track Impact</h3>
-<p>See your carbon savings, waste reduction and community impact.</p>
+<p>See money saved and sustainability impact.</p>
 </div>
 
 </div>
-</div>
-
-<div class="section">
-<h2>Future Vision</h2>
-
-<p>
-Connecting charity shops, refurbished electronics, repair services and sustainability-focused employers in one platform.
-</p>
 
 </div>
 
 <footer>
-Built by Circular Economy Wallet | 2026
+
+<p>Building in public 🚀</p>
+
 </footer>
+
+<!-- WAITLIST POPUP -->
+
+<div id="waitlistModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">&times;</span>
+
+<h2>Join The Waiting List</h2>
+
+<p>Be the first to hear when we launch.</p>
+
+YOUR_FORMSPREE_URL
+
+<input
+type="text"
+name="name"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+name="email"
+placeholder="Your Email"
+required>
+
+<button type="submit">
+Join Waitlist
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script>
+
+function openModal() {
+document.getElementById("waitlistModal").style.display = "block";
+}
+
+function closeModal() {
+document.getElementById("waitlistModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+
+const modal =
+document.getElementById("waitlistModal");
+
+if(event.target == modal){
+modal.style.display = "none";
+}
+
+}
+
+</script>
 
 </body>
 </html>
