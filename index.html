@@ -7,62 +7,114 @@
 
 <style>
 body{
-font-family:Arial,sans-serif;
-margin:0;
-background:#f5f7f5;
-text-align:center;
-color:#1e293b;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f7f5;
+    color:#1e293b;
 }
 
 .hero{
-background:#0f766e;
-color:white;
-padding:80px 20px;
+    background:linear-gradient(135deg,#0f766e,#14b8a6);
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    margin-bottom:30px;
+    font-size:1.2rem;
 }
 
 .button{
-background:white;
-color:#0f766e;
-padding:15px 25px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-font-size:18px;
-font-weight:bold;
+    background:white;
+    color:#0f766e;
+    padding:15px 30px;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
+.section{
+    max-width:1000px;
+    margin:auto;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    background:#e5e7eb;
+}
+
+/* POPUP */
+
 .modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
 }
 
 .modal-content{
-background:white;
-padding:30px;
-max-width:500px;
-margin:100px auto;
-border-radius:10px;
+    background:white;
+    width:90%;
+    max-width:500px;
+    margin:80px auto;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+    position:relative;
 }
 
-input{
-width:90%;
-padding:12px;
-margin:10px 0;
+.close{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:30px;
+    cursor:pointer;
+}
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    box-sizing:border-box;
 }
 
 .submit-btn{
-background:#0f766e;
-color:white;
-border:none;
-padding:12px 20px;
-cursor:pointer;
-border-radius:8px;
-width:95%;
+    background:#0f766e;
+    color:white;
+    border:none;
+    padding:12px;
+    width:100%;
+    cursor:pointer;
+    border-radius:8px;
 }
 </style>
 
@@ -72,22 +124,3 @@ width:95%;
 
 <div class="hero">
 
-<h1>🌍 Circular Economy Wallet</h1>
-
-<p>
-Rewarding people for buying second-hand, refurbished and repaired products.
-</p>
-
-<button class="button" onclick="document.getElementById('popup').style.display='block'">
-Join The Waiting List
-</button>
-
-</div>
-
-<div id="popup" class="modal">
-
-<div class="modal-content">
-
-<h2>Join The Waiting List</h2>
-
-<form
