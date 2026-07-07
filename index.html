@@ -156,6 +156,13 @@ footer{
 .submit-btn:hover{
   background:var(--wallet-hover);
 }
+
+/* Affiliate cards */
+.affiliate-card{ text-decoration:none; color:inherit; }
+.affiliate-card .card{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:140px; }
+.affiliate-logo{ width:88px; height:auto; }
+.affiliate-note{ font-size:0.85rem; color:var(--text-secondary); }
+
 </style>
 
 </head>
@@ -199,6 +206,41 @@ Join The Waiting List
 
 </div>
 
+</div>
+
+<!-- New affiliate section -->
+<div class="section">
+  <h2 style="color:var(--circular-text)">Shop Resale Partners</h2>
+  <div class="cards">
+
+    <a class="affiliate-card" href="https://amzn.to/4woXTs1" target="_blank" rel="noopener noreferrer">
+      <div class="card" aria-label="Amazon Resale (affiliate)">
+        <!-- simple shopping-bag SVG as logo placeholder -->
+        <svg class="affiliate-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="2" y="6" width="20" height="14" rx="2" fill="#F3A847" />
+          <path d="M7 6c0-2 1.5-3 3.5-3S14 4 14 6" stroke="#633700" stroke-width="1.2" fill="none" stroke-linecap="round" />
+          <path d="M8 11c1 1.5 3 1.5 4 0" stroke="#633700" stroke-width="1.2" stroke-linecap="round" fill="none" />
+        </svg>
+        <h3>Amazon Resale</h3>
+        <p>Shop refurbished and used items on Amazon. <span class="affiliate-note">(affiliate)</span></p>
+      </div>
+    </a>
+
+    <a class="affiliate-card" href="https://ebay.us/uQBUtc" target="_blank" rel="noopener noreferrer">
+      <div class="card" aria-label="eBay (affiliate)">
+        <!-- simple colorful dots as eBay-inspired placeholder -->
+        <svg class="affiliate-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" aria-hidden="true">
+          <text x="10" y="26" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#E53238">e</text>
+          <text x="32" y="26" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#0064D2">b</text>
+          <text x="54" y="26" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#F5AF02">a</text>
+          <text x="76" y="26" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#86B817">y</text>
+        </svg>
+        <h3>eBay</h3>
+        <p>Find great second-hand deals on eBay. <span class="affiliate-note">(affiliate)</span></p>
+      </div>
+    </a>
+
+  </div>
 </div>
 
 <div class="section">
