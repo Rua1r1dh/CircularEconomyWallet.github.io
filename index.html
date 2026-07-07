@@ -285,6 +285,8 @@ body{
   height: 100%;
   object-fit: contain;
   border-radius: 40px;
+  border: none;
+  outline: none;
 }
 
 .carousel-nav {
@@ -425,15 +427,15 @@ body{
   box-shadow:0 15px 50px rgba(225,190,115,0.2), 0 8px 30px rgba(2,6,23,0.45);
   transform:translateY(-8px);
 }
-.card:hover::before{
-  opacity:1;
-}
 .card h3{margin:0 0 8px 0;color:var(--wallet-text);font-size:1.05rem;position:relative;z-index:1}
 .card p{margin:0;color:var(--text-muted);line-height:1.5;position:relative;z-index:1}
 
 /* Affiliate cards */
 .affiliate-card{ text-decoration:none; color:inherit; display:flex; }
 .affiliate-card .card{ display:flex; gap:16px; align-items:center; justify-content:space-between; }
+.affiliate-card .card:hover::before{
+  opacity:1;
+}
 .affiliate-info{display:flex;gap:14px;align-items:center}
 .affiliate-logo{width:72px;height:auto;opacity:0.95;transition:opacity 0.3s ease}
 .affiliate-card:hover .affiliate-logo{opacity:1}
