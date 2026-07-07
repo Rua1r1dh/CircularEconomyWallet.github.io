@@ -34,25 +34,25 @@
   }
 }
 
-@keyframes rotateIn {
-  0% {
+@keyframes slideInFromRight {
+  from {
     opacity: 0;
-    transform: rotateY(90deg) scale(0.8);
+    transform: translateX(100px);
   }
-  100% {
+  to {
     opacity: 1;
-    transform: rotateY(0deg) scale(1);
+    transform: translateX(0);
   }
 }
 
-@keyframes rotateOut {
-  0% {
+@keyframes slideOutToLeft {
+  from {
     opacity: 1;
-    transform: rotateY(0deg) scale(1);
+    transform: translateX(0);
   }
-  100% {
+  to {
     opacity: 0;
-    transform: rotateY(-90deg) scale(0.8);
+    transform: translateX(-100px);
   }
 }
 
@@ -257,6 +257,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .phone-image {
@@ -264,26 +265,26 @@ body{
   width: 100%;
   height: 100%;
   opacity: 0;
-  transform: rotateY(90deg) scale(0.8);
-  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translateX(100px);
+  transition: all 0.6s ease-out;
   filter: drop-shadow(0 20px 60px rgba(0,0,0,0.6));
 }
 
 .phone-image.active {
   opacity: 1;
-  transform: rotateY(0deg) scale(1);
+  transform: translateX(0);
   z-index: 10;
 }
 
 .phone-image.prev {
-  transform: rotateY(-90deg) scale(0.8);
+  transform: translateX(-100px);
   opacity: 0;
 }
 
 .phone-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 40px;
   border: none;
   outline: none;
@@ -433,9 +434,6 @@ body{
 /* Affiliate cards */
 .affiliate-card{ text-decoration:none; color:inherit; display:flex; }
 .affiliate-card .card{ display:flex; gap:16px; align-items:center; justify-content:space-between; }
-.affiliate-card .card:hover::before{
-  opacity:1;
-}
 .affiliate-info{display:flex;gap:14px;align-items:center}
 .affiliate-logo{width:72px;height:auto;opacity:0.95;transition:opacity 0.3s ease}
 .affiliate-card:hover .affiliate-logo{opacity:1}
@@ -454,7 +452,7 @@ footer{padding:36px 0;color:var(--text-muted);font-size:0.92rem;text-align:cente
 /* Modal */
 .modal{display:none;position:fixed;inset:0;background:rgba(2,6,23,0.8);align-items:center;justify-content:center;padding:24px;z-index:999;backdrop-filter:blur(4px);animation:fadeIn 0.3s ease}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.modal-content{background:linear-gradient(135deg, var(--surface) 0%, #0a1a12 100%);padding:26px;border-radius:12px;border:1px solid rgba(225,190,115,0.3);width:100%;max-width:520px;box-shadow:0 20px 60px rgba(0,0,0,0.5);position:relative}
+.modal-content{background:linear-gradient(135deg, var(--surface) 0%, #0a1a12 100%);padding:26px;border-radius:12px;border:1px solid rgba(225,190,115,0.3);width:100%;max-width:520px;box-shadow:0 20px 60px rgba(0,0,0,0.8)}
 .close{position:absolute;right:18px;top:18px;color:var(--text-muted);cursor:pointer;font-size:24px;transition:all 0.2s ease;font-weight:300}
 .close:hover{color:var(--wallet-text);transform:scale(1.2)}
 .modal input{width:100%;padding:12px;border-radius:8px;border:2px solid #E1BE73;background:#E1BE73;color:#071a12;margin-top:10px;font-weight:600;font-size:0.95rem;transition:all 0.3s ease}
@@ -602,7 +600,7 @@ footer{padding:36px 0;color:var(--text-muted);font-size:0.92rem;text-align:cente
   <section class="section">
     <h2>Future vision</h2>
     <div class="card" style="padding:18px;">
-      <p style="margin:0;color:var(--text-muted)">We aim to connect charity shops, repair services, refurbishers and sustainability‑first employers to form a trusted marketplace for reuse. Rewards flow freely to conscious consumers, creating a positive feedback loop for a truly circular economy.</p>
+      <p style="margin:0;color:var(--text-muted)">We aim to connect charity shops, repair services, refurbishers and sustainability‑first employers to form a trusted marketplace for reuse. Rewards for sustainable consumption drive behavioral change and investment in a circular economy. Join us in building the future of responsible consumption.</p>
     </div>
   </section>
 
