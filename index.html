@@ -8,16 +8,16 @@
 
 <style>
 :root{
-  /* Refined palette for a professional, prestigious look */
-  --bg: #071426; /* Deep navy */
-  --surface: #0e1a2a; /* card / surface */
+  /* Olive/Green palette for a prestigious, sustainable look */
+  --bg: #071a12; /* deep greenish navy */
+  --surface: #0e2218; /* card / surface */
   --muted-surface: rgba(255,255,255,0.03);
-  --accent: #C9A85E; /* warm gold */
-  --accent-strong: #B58F45; /* gold hover */
+  --accent: #7D8F52; /* olive green accent */
+  --accent-strong: #6B7B44; /* darker olive for hover */
   --text-main: #F6F3EE; /* off-white */
   --text-muted: #BDB6A7; /* muted */
-  --glass: rgba(255,255,255,0.04);
-  --focus: rgba(201,168,94,0.16);
+  --glass: rgba(255,255,255,0.03);
+  --focus: rgba(125,143,82,0.14);
 }
 
 *{box-sizing:border-box}
@@ -25,7 +25,7 @@ html,body{height:100%}
 body{
   margin:0;
   font-family:Inter, Arial, sans-serif;
-  background:linear-gradient(180deg,var(--bg) 0%, #071a2b 100%);
+  background:linear-gradient(180deg,var(--bg) 0%, #071f15 100%);
   color:var(--text-main);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -55,7 +55,7 @@ body{
   width:44px;
   height:44px;
   border-radius:8px;
-  background:linear-gradient(135deg, rgba(201,168,94,0.14), rgba(201,168,94,0.06));
+  background:linear-gradient(135deg, rgba(125,143,82,0.14), rgba(125,143,82,0.06));
   display:flex;
   align-items:center;
   justify-content:center;
@@ -115,8 +115,8 @@ body{
 }
 .btn-primary{
   background:var(--accent);
-  color:#08101b;
-  box-shadow:0 6px 18px rgba(8,16,27,0.45);
+  color:#071a12;
+  box-shadow:0 6px 18px rgba(7,26,18,0.45);
 }
 .btn-primary:hover{background:var(--accent-strong)}
 .btn-ghost{
@@ -179,7 +179,7 @@ footer{padding:36px 0;color:var(--text-muted);font-size:0.92rem;text-align:cente
 .modal-content{background:var(--surface);padding:26px;border-radius:12px;border:1px solid var(--muted-surface);width:100%;max-width:520px}
 .close{position:absolute;right:18px;top:18px;color:var(--text-muted);cursor:pointer;font-size:20px}
 .modal input{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text-main);margin-top:10px}
-.submit-btn{margin-top:12px;padding:12px 14px;border-radius:8px;border:none;background:var(--accent);color:#071426;font-weight:700;width:100%}
+.submit-btn{margin-top:12px;padding:12px 14px;border-radius:8px;border:none;background:var(--accent);color:#071a12;font-weight:700;width:100%}
 
 /* Responsive */
 @media (max-width:880px){
@@ -194,7 +194,7 @@ footer{padding:36px 0;color:var(--text-muted);font-size:0.92rem;text-align:cente
 
 <header class="container header">
   <a class="logo" href="/">
-    <div class="logo-mark">CE</div>
+    <div class="logo-mark">CEW</div>
     <div class="brand">Circular Economy Wallet</div>
   </a>
   <nav class="nav" aria-label="Primary">
