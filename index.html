@@ -86,6 +86,11 @@ h1{
   color:var(--wallet-text);
 }
 
+/* Make Amazon card title white to stand out */
+.amazon-card h3{
+  color:#FFFFFF;
+}
+
 .card p{
   color:var(--text-secondary);
 }
@@ -220,7 +225,7 @@ Join The Waiting List
   <p class="disclosure">Disclosure: We may earn a commission when you buy through these affiliate links at no extra cost to you.</p>
   <div class="cards">
 
-    <a class="affiliate-card" href="/out/ebay.html" target="_self" rel="noopener noreferrer">
+    <a class="affiliate-card" href="/out/ebay.html" target="_blank" rel="noopener noreferrer">
       <div class="card" aria-label="eBay (affiliate)">
         <!-- eBay-styled wordmark SVG -->
         <svg class="affiliate-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" aria-hidden="true">
@@ -234,11 +239,11 @@ Join The Waiting List
       </div>
     </a>
 
-    <a class="affiliate-card" href="/out/amazon.html" target="_self" rel="noopener noreferrer">
-      <div class="card" aria-label="Amazon Resale (affiliate)">
+    <a class="affiliate-card" href="/out/amazon.html" target="_blank" rel="noopener noreferrer">
+      <div class="card amazon-card" aria-label="Amazon Resale (affiliate)">
         <!-- Amazon-like wordmark + smile (simplified) -->
         <svg class="affiliate-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" aria-hidden="true">
-          <text x="6" y="26" font-family="Amazon Ember, Arial, Helvetica, sans-serif" font-weight="700" font-size="22" fill="#111111">amazon</text>
+          <text x="6" y="26" font-family="Amazon Ember, Arial, Helvetica, sans-serif" font-weight="700" font-size="22" fill="#FFFFFF">amazon</text>
           <path d="M30 30 C45 40, 85 40, 100 30" stroke="#F3A847" stroke-width="3.6" stroke-linecap="round" fill="none" />
         </svg>
         <h3>Amazon Resale</h3>
