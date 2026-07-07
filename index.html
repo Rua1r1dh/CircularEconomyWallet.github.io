@@ -16,6 +16,7 @@
   --text-main: #F7F3E8; /* Main Text - Soft White */
   --text-secondary: #D8D3C2; /* Secondary Text - Warm Grey */
   --placeholder: #9CA3AF; /* Input Placeholder - Slate Grey */
+  --affiliate-border: rgba(255,255,255,0.04);
 }
 
 body{
@@ -78,6 +79,7 @@ h1{
   border-radius:10px;
   box-shadow:0 2px 10px rgba(0,0,0,0.4);
   color:var(--text-main);
+  border:1px solid var(--affiliate-border);
 }
 
 .card h3{
@@ -159,9 +161,13 @@ footer{
 
 /* Affiliate cards */
 .affiliate-card{ text-decoration:none; color:inherit; }
-.affiliate-card .card{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:140px; }
-.affiliate-logo{ width:88px; height:auto; }
+.affiliate-card .card{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:160px; }
+.affiliate-logo{ width:auto; height:54px; }
 .affiliate-note{ font-size:0.85rem; color:var(--text-secondary); }
+.affiliate-card:hover{ transform:translateY(-4px); transition:transform 160ms ease; }
+.affiliate-etsy{ /* reserved if needed */ }
+
+.disclosure{ font-size:0.85rem; color:var(--text-secondary); margin-top:12px; }
 
 </style>
 
@@ -208,35 +214,35 @@ Join The Waiting List
 
 </div>
 
-<!-- New affiliate section -->
+<!-- New affiliate section (eBay first) -->
 <div class="section">
   <h2 style="color:var(--circular-text)">Shop Resale Partners</h2>
+  <p class="disclosure">Disclosure: We may earn a commission when you buy through these affiliate links at no extra cost to you.</p>
   <div class="cards">
 
-    <a class="affiliate-card" href="https://amzn.to/4woXTs1" target="_blank" rel="noopener noreferrer">
-      <div class="card" aria-label="Amazon Resale (affiliate)">
-        <!-- simple shopping-bag SVG as logo placeholder -->
-        <svg class="affiliate-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <rect x="2" y="6" width="20" height="14" rx="2" fill="#F3A847" />
-          <path d="M7 6c0-2 1.5-3 3.5-3S14 4 14 6" stroke="#633700" stroke-width="1.2" fill="none" stroke-linecap="round" />
-          <path d="M8 11c1 1.5 3 1.5 4 0" stroke="#633700" stroke-width="1.2" stroke-linecap="round" fill="none" />
-        </svg>
-        <h3>Amazon Resale</h3>
-        <p>Shop refurbished and used items on Amazon. <span class="affiliate-note">(affiliate)</span></p>
-      </div>
-    </a>
-
-    <a class="affiliate-card" href="https://ebay.us/uQBUtc" target="_blank" rel="noopener noreferrer">
+    <a class="affiliate-card" href="/out/ebay.html" target="_self" rel="noopener noreferrer">
       <div class="card" aria-label="eBay (affiliate)">
-        <!-- simple colorful dots as eBay-inspired placeholder -->
+        <!-- eBay-styled wordmark SVG -->
         <svg class="affiliate-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" aria-hidden="true">
-          <text x="10" y="26" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#E53238">e</text>
-          <text x="32" y="26" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#0064D2">b</text>
-          <text x="54" y="26" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#F5AF02">a</text>
-          <text x="76" y="26" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#86B817">y</text>
+          <text x="6" y="26" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="24" fill="#E53238">e</text>
+          <text x="34" y="26" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="24" fill="#0064D2">b</text>
+          <text x="62" y="26" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="24" fill="#F5AF02">a</text>
+          <text x="90" y="26" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="24" fill="#86B817">y</text>
         </svg>
         <h3>eBay</h3>
         <p>Find great second-hand deals on eBay. <span class="affiliate-note">(affiliate)</span></p>
+      </div>
+    </a>
+
+    <a class="affiliate-card" href="/out/amazon.html" target="_self" rel="noopener noreferrer">
+      <div class="card" aria-label="Amazon Resale (affiliate)">
+        <!-- Amazon-like wordmark + smile (simplified) -->
+        <svg class="affiliate-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" aria-hidden="true">
+          <text x="6" y="26" font-family="Amazon Ember, Arial, Helvetica, sans-serif" font-weight="700" font-size="22" fill="#111111">amazon</text>
+          <path d="M30 30 C45 40, 85 40, 100 30" stroke="#F3A847" stroke-width="3.6" stroke-linecap="round" fill="none" />
+        </svg>
+        <h3>Amazon Resale</h3>
+        <p>Shop refurbished and used items on Amazon. <span class="affiliate-note">(affiliate)</span></p>
       </div>
     </a>
 

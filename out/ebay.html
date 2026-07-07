@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Redirecting to eBay...</title>
+  <meta http-equiv="refresh" content="0;url=https://ebay.us/uQBUtc?utm_source=circularwallet&utm_medium=affiliate&utm_campaign=resale_ebay">
+</head>
+<body>
+  <p>If you are not redirected automatically, <a href="https://ebay.us/uQBUtc?utm_source=circularwallet&utm_medium=affiliate&utm_campaign=resale_ebay">click here to continue to eBay</a>.</p>
+  <script>
+    // Immediate redirect with JS as a fallback for meta refresh
+    (function(){
+      var target = 'https://ebay.us/uQBUtc?utm_source=circularwallet&utm_medium=affiliate&utm_campaign=resale_ebay';
+      try{
+        // Attempt a non-blocking beacon to analytics endpoint if available (no endpoint configured)
+        if(navigator.sendBeacon){
+          // Example: navigator.sendBeacon('/log-click', JSON.stringify({partner:'ebay'}));
+        }
+      }catch(e){}
+      window.location.replace(target);
+    })();
+  </script>
+</body>
+</html>
