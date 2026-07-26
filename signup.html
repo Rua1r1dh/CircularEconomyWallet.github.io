@@ -3,7 +3,7 @@
 <head>
   <title>CEW - Sign Up</title>
 
-  https://cdn.jsdelivr.net/npm/@supabase/supabase-jsscript>
+  https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2script>
 
   <style>
     body{
@@ -16,12 +16,14 @@
       height:100vh;
     }
 
-    .card{
-      background:#11251b;
-      padding:30px;
-      border-radius:12px;
-      width:350px;
-    }
+   .card{
+background:#11251b;
+padding:30px;
+border-radius:12px;
+width:350px;
+margin:auto;
+
+}
 
     input{
       width:100%;
@@ -55,27 +57,34 @@
 <script>
 
 const supabase = window.supabase.createClient(
-  "YOUR_SUPABASE_URL",
-  "YOUR_PUBLISHABLE_KEY"
+  "https://jacbavguwlktbiocsfcz.supabase.co",
+  "sb_publishable_4LYtkRuPl4VrnxXz67qRNg_Z8mfGXSN"
 );
+``
 
-async function signup(){
+async function signup() {
 
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
+  console.log("Testing signup");
+
   const { data, error } = await supabase.auth.signUp({
-      email,
-      password
+    email: email,
+    password: password
   });
 
-  if(error){
-      document.getElementById("message").innerText = error.message;
-      return;
+  console.log(data);
+  console.log(error);
+
+  if (error) {
+    document.getElementById("message").innerText =
+      error.message;
+    return;
   }
 
   document.getElementById("message").innerText =
-    "Account created. Check your email to verify.";
+    "Account created. Check your email.";
 }
 
 </script>
