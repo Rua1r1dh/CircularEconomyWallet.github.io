@@ -58,7 +58,7 @@ margin:auto;
 
 <script>
 
-const supabase = window.supabase.createClient(
+const client = window.supabase.createClient(
   "https://jacbavguwlktbiocsfcz.supabase.co",
   "sb_publishable_4LYtkRuPl4VrnxXz67qRNg_Z8mfGXSN"
 );
@@ -70,7 +70,7 @@ async function signup() {
 
   console.log("Testing signup");
 
-  const { data, error } = await supabase.auth.signUp({
+  const { data, error } = await client.auth.signUp({
     email: email,
     password: password
   });
