@@ -4,7 +4,7 @@
 
 <head>
 
-<title>CEW - Sign Up</title>
+<title>CEW - Login</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
@@ -46,7 +46,7 @@ margin:auto;
 <body>
 
 <div class="card">
-  <h2>Create Account</h2>
+  <h2>Login</h2>
 
   <input id="email" type="email" placeholder="Email">
   <input id="password" type="password" placeholder="Password">
@@ -60,7 +60,7 @@ margin:auto;
 
 const client = window.supabase.createClient(
   "https://jacbavguwlktbiocsfcz.supabase.co",
-  "YOUR_PUBLISHABLE_KEY"
+  "sb_publishable_4LYtkRuPl4VrnxXz67qRNg_Z8mfGXSN"
 );
 
 async function login() {
