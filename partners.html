@@ -4,108 +4,288 @@
 <title>CEW Partners</title>
 
 <style>
-.partner a:hover{
-  opacity:0.9;
-}
 body{
   font-family:Arial,sans-serif;
   background:#071a12;
   color:white;
-  display:flex;
-  justify-content:center;
+  margin:0;
   padding:40px;
 }
 
-.card{
-  background:#11251b;
-  padding:30px;
-  border-radius:12px;
-  width:600px;
-  margin:50px auto;
+.page{
+  max-width:1100px;
+  margin:auto;
 }
 
-h1{
-  margin-top:0;
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  margin-bottom:25px;
 }
 
-.partner{
-  background:#1a3526;
-  padding:20px;
-  border-radius:8px;
-  margin-bottom:15px;
+.header h1{
+  color:#E1BE73;
+  margin:0;
 }
 
-.partner h3{
-  margin:0 0 10px 0;
-}
-
-.partner a{
-  display:inline-block;
-  background:#E1BE73;
-  color:black;
-  padding:10px 15px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-  min-width:180px;
-  text-align:center;
+.header p{
+  color:#BDB6A7;
 }
 
 .back{
-  margin-top:20px;
-  display:inline-block;
   color:#E1BE73;
+  text-decoration:none;
+  font-weight:bold;
 }
 
+.controls{
+  background:#11251b;
+  padding:20px;
+  border-radius:14px;
+  border:1px solid rgba(225,190,115,0.18);
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:15px;
+  margin-bottom:25px;
+}
+
+input,
+select{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid rgba(225,190,115,0.3);
+  background:#071a12;
+  color:white;
+  box-sizing:border-box;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.stat-card{
+  background:#11251b;
+  padding:18px;
+  border-radius:14px;
+  border:1px solid rgba(225,190,115,0.18);
+}
+
+.stat-card h3{
+  margin:0;
+  color:#E1BE73;
+  font-size:1.8rem;
+}
+
+.stat-card p{
+  margin:5px 0 0 0;
+  color:#BDB6A7;
+}
+
+.partners-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.partner-card{
+  background:#11251b;
+  padding:22px;
+  border-radius:16px;
+  border:1px solid rgba(225,190,115,0.18);
+  box-shadow:0 8px 24px rgba(0,0,0,0.25);
+  transition:0.25s;
+}
+
+.partner-card:hover{
+  transform:translateY(-5px);
+  border-color:#E1BE73;
+}
+
+.partner-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.logo{
+  width:58px;
+  height:58px;
+  border-radius:14px;
+  background:#1a3526;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#E1BE73;
+  font-weight:bold;
+  font-size:0.9rem;
+  border:1px solid rgba(225,190,115,0.3);
+  text-align:center;
+}
+
+.cashback{
+  background:#E1BE73;
+  color:#071a12;
+  padding:7px 12px;
+  border-radius:999px;
+  font-weight:bold;
+  font-size:0.85rem;
+}
+
+.partner-card h2{
+  margin:0 0 8px 0;
+  color:white;
+}
+
+.description{
+  color:#BDB6A7;
+  min-height:45px;
+}
+
+.meta-row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:15px 0;
+}
+
+.tag{
+  background:#1a3526;
+  border:1px solid rgba(225,190,115,0.25);
+  color:#E1BE73;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:0.8rem;
+}
+
+.visit{
+  display:block;
+  text-align:center;
+  background:#E1BE73;
+  color:#071a12;
+  text-decoration:none;
+  padding:12px;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.visit:hover{
+  opacity:0.9;
+}
+
+.note{
+  color:#BDB6A7;
+  font-size:0.85rem;
+  margin-top:25px;
+}
+
+@media(max-width:800px){
+  .controls{
+    grid-template-columns:1fr;
+  }
+
+  .header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="page">
 
-<h1>Browse Partners</h1>
+  <div class="header">
+    <div>
+      <h1>Browse Partners</h1>
+      <p>Find circular economy retailers and earn rewards for responsible choices.</p>
+    </div>
 
-<div class="partner">
-  <h3>eBay</h3>
-  <p>Shop quality second-hand items.</p>
+    <a class="back" href="dashboard.html">← Back to Dashboard</a>
+  </div>
 
-  <a href="https://ebay.us/uQBUtc" target="_blank">
-    Visit eBay
-  </a>
-</div>
+  <div class="stats">
+    <div class="stat-card">
+      <h3 id="partnerCount">0</h3>
+      <p>Partners</p>
+    </div>
 
-<div class="partner">
-  <h3>Amazon Resale</h3>
-  <p>Refurbished and returned products.</p>
+    <div class="stat-card">
+      <h3>6</h3>
+      <p>Sectors</p>
+    </div>
 
-  <a href="https://amzn.to/4woXTs1" target="_blank">
-    Visit Amazon Resale
-  </a>
-</div>
+    <div class="stat-card">
+      <h3>5%</h3>
+      <p>Highest Demo Cashback</p>
+    </div>
+  </div>
 
-<div class="partner">
-  <h3>Vinted</h3>
-  <p>Pre-loved fashion marketplace.</p>
+  <div class="controls">
+    <input id="searchInput" type="text" placeholder="Search partners..." onkeyup="filterAndSortPartners()">
 
-  <a href="#" target="_blank">
-    Visit Vinted
-  </a>
-</div>
+    <select id="sectorFilter" onchange="filterAndSortPartners()">
+      <option value="All">All Sectors</option>
+      <option value="Energy">Energy</option>
+      <option value="Fashion">Fashion</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Marketplace">Marketplace</option>
+      <option value="Food & Sharing">Food & Sharing</option>
+      <option value="Transport">Transport</option>
+    </select>
 
-<div class="partner">
-  <h3>CeX</h3>
-  <p>Used technology and electronics.</p>
-  <a href="#" target="_blank">
-    Visit CeX
-  </a>
-</div>
+    <select id="sortOption" onchange="filterAndSortPartners()">
+      <option value="az">Alphabetical A-Z</option>
+      <option value="za">Alphabetical Z-A</option>
+      <option value="high">Highest Cashback</option>
+      <option value="low">Lowest Cashback</option>
+      <option value="sector">Sector</option>
+    </select>
+  </div>
 
-<a class="back" href="dashboard.html">
-← Back to Dashboard
-</a>
+  <div class="partners-grid" id="partnersGrid">
 
-</div>
+    <div class="partner-card" data-name="eBay" data-sector="Marketplace" data-cashback="3">
+      <div class="partner-top">
+        <div class="logo">eBay</div>
+        <span class="cashback">3% Cashback</span>
+      </div>
+      <h2>eBay</h2>
+      <p class="description">Shop quality pre-owned, refurbished and resale items across categories.</p>
+      <div class="meta-row">
+        <span class="tag">Marketplace</span>
+        <span class="tag">Reuse</span>
+        <span class="tag">Second-hand</span>
+      </div>
+      <a class="visit" href="https://ebay.us/uQBUtc" target="_blank">Visit Partner</a>
+    </div>
 
-</body>
-</html>
+    <div class="partner-card" data-name="Amazon Resale" data-sector="Marketplace" data-cashback="2">
+      <div class="partner-top">
+        <div class="logo">amazon</div>
+        <span class="cashback">2% Cashback</span>
+      </div>
+      <h2>Amazon Resale</h2>
+      <p class="description">Shop returned, refurbished and used products through Amazon Resale.</p>
+      <div class="meta-row">
+        <span class="tag">Marketplace</span>
+        <span class="tag">Resale</span>
+        <span class="tag">Refurbished</span>
+      </div>
+      <a class="visit" href="https://amzn.to/4woXTs1" target="_blank">Visit Partner</a>
+    </div>
+
+    <div class="partner-card" data-name="Vinted" data-sector="Fashion" data-cashback="4">
+      <div class="partner-top">
+        <div class="logo">Vinted</div>
+        <span class="cashback">4% Cashback</span>
+      </div>
+      <h2>Vinted</h2>
+      <p class="description">Buy 
