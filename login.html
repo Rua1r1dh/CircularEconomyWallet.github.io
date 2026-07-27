@@ -99,11 +99,11 @@ const client = window.supabase.createClient(
 
   const email = document.getElementById("email").value;
 
-  if (!email) {
-    document.getElementById("message").innerText =
-      "Enter your email first.";
-    return;
-  }
+ if (!email) {
+  document.getElementById("message").innerText =
+    "Please enter your email address to reset your password.";
+  return;
+}
 
   const { error } =
     await client.auth.resetPasswordForEmail(email);
@@ -114,7 +114,8 @@ const client = window.supabase.createClient(
     return;
   }
 
-  alert("Password reset email sent.");
+  document.getElementById("message").innerText =
+  "Password reset email sent. Check your inbox.";
 }
 
 async function login() {
