@@ -2,9 +2,36 @@
 <html>
 <head>
 <title>CEW Dashboard</title>
+  <style>
+
+body{
+  font-family:Arial,sans-serif;
+  background:#071a12;
+  color:white;
+}
+
+.card{
+  background:#11251b;
+  padding:30px;
+  border-radius:12px;
+  width:400px;
+  margin:50px auto;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#E1BE73;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+  border-radius:8px;
+}
+
+</style>
 </head>
 
-<body style="font-family:Arial;background:#071a12;color:white;">
+<body>
 
 <div class="card">
 
@@ -18,9 +45,13 @@
     Browse Partners
   </button>
 
+  <br><br>
+
   <button>
     Submit Purchase
   </button>
+
+  <br><br>
 
   <button onclick="logout()">
     Log Out
@@ -51,6 +82,7 @@ async function logout() {
 }
 
 checkUser();
+  
 </script>
 
 </body>
