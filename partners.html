@@ -288,4 +288,193 @@ select{
         <span class="cashback">4% Cashback</span>
       </div>
       <h2>Vinted</h2>
-      <p class="description">Buy 
+      <p class="description">Buy and sell pre-loved clothes, shoes and accessories.</p>
+      <div class="meta-row">
+        <span class="tag">Fashion</span>
+        <span class="tag">Pre-loved</span>
+        <span class="tag">Reuse</span>
+      </div>
+      <a class="visit" href="#" target="_blank">Visit Partner</a>
+    </div>
+
+    <div class="partner-card" data-name="Depop" data-sector="Fashion" data-cashback="3">
+      <div class="partner-top">
+        <div class="logo">Depop</div>
+        <span class="cashback">3% Cashback</span>
+      </div>
+      <h2>Depop</h2>
+      <p class="description">Discover second-hand fashion, vintage clothing and independent sellers.</p>
+      <div class="meta-row">
+        <span class="tag">Fashion</span>
+        <span class="tag">Vintage</span>
+        <span class="tag">Second-hand</span>
+      </div>
+      <a class="visit" href="#" target="_blank">Visit Partner</a>
+    </div>
+
+    <div class="partner-card" data-name="Olio" data-sector="Food & Sharing" data-cashback="1">
+      <div class="partner-top">
+        <div class="logo">Olio</div>
+        <span class="cashback">1% Cashback</span>
+      </div>
+      <h2>Olio</h2>
+      <p class="description">Share spare food and household items locally to reduce waste.</p>
+      <div class="meta-row">
+        <span class="tag">Food & Sharing</span>
+        <span class="tag">Waste Reduction</span>
+        <span class="tag">Community</span>
+      </div>
+      <a class="visit" href="#" target="_blank">Visit Partner</a>
+    </div>
+
+    <div class="partner-card" data-name="CeX" data-sector="Electronics" data-cashback="4">
+      <div class="partner-top">
+        <div class="logo">CeX</div>
+        <span class="cashback">4% Cashback</span>
+      </div>
+      <h2>CeX</h2>
+      <p class="description">Buy used phones, consoles, games, laptops and entertainment tech.</p>
+      <div class="meta-row">
+        <span class="tag">Electronics</span>
+        <span class="tag">Used Tech</span>
+        <span class="tag">Reuse</span>
+      </div>
+      <a class="visit" href="#" target="_blank">Visit Partner</a>
+    </div>
+
+    <div class="partner-card" data-name="MusicMagpie" data-sector="Electronics" data-cashback="5">
+      <div class="partner-top">
+        <div class="logo">music<br>magpie</div>
+        <span class="cashback">5% Cashback</span>
+      </div>
+      <h2>MusicMagpie</h2>
+      <p class="description">Shop refurbished phones, tech, media and second-hand electronics.</p>
+      <div class="meta-row">
+        <span class="tag">Electronics</span>
+        <span class="tag">Refurbished</span>
+        <span class="tag">Circular Tech</span>
+      </div>
+      <a class="visit" href="#" target="_blank">Visit Partner</a>
+    </div>
+
+    <div class="partner-card" data-name="Octopus Energy" data-sector="Energy" data-cashback="0">
+      <div class="partner-top">
+        <div class="logo">Octopus</div>
+        <span class="cashback">£50 Reward</span>
+      </div>
+      <h2>Octopus Energy</h2>
+      <p class="description">Switch to a renewable-focused energy supplier and earn referral rewards.</p>
+      <div class="meta-row">
+        <span class="tag">Energy</span>
+        <span class="tag">Renewables</span>
+        <span class="tag">Referral</span>
+      </div>
+      <a class="visit" href="#" target="_blank">Visit Partner</a>
+    </div>
+
+    <div class="partner-card" data-name="E.ON" data-sector="Energy" data-cashback="2">
+      <div class="partner-top">
+        <div class="logo">E.ON</div>
+        <span class="cashback">2% Cashback</span>
+      </div>
+      <h2>E.ON</h2>
+      <p class="description">Explore energy tariffs and low-carbon home energy options.</p>
+      <div class="meta-row">
+        <span class="tag">Energy</span>
+        <span class="tag">Home Energy</span>
+        <span class="tag">Low Carbon</span>
+      </div>
+      <a class="visit" href="#" target="_blank">Visit Partner</a>
+    </div>
+
+    <div class="partner-card" data-name="Ecotricity" data-sector="Energy" data-cashback="2">
+      <div class="partner-top">
+        <div class="logo">Eco<br>tricity</div>
+        <span class="cashback">2% Cashback</span>
+      </div>
+      <h2>Ecotricity</h2>
+      <p class="description">Support greener energy choices through a renewable energy supplier.</p>
+      <div class="meta-row">
+        <span class="tag">Energy</span>
+        <span class="tag">Renewables</span>
+        <span class="tag">Green Tariff</span>
+      </div>
+      <a class="visit" href="#" target="_blank">Visit Partner</a>
+    </div>
+
+    <div class="partner-card" data-name="Tesla" data-sector="Transport" data-cashback="1">
+      <div class="partner-top">
+        <div class="logo">Tesla</div>
+        <span class="cashback">1% Cashback</span>
+      </div>
+      <h2>Tesla</h2>
+      <p class="description">Electric vehicles, charging products and low-emission transport options.</p>
+      <div class="meta-row">
+        <span class="tag">Transport</span>
+        <span class="tag">EV</span>
+        <span class="tag">Low Carbon</span>
+      </div>
+      <a class="visit" href="#" target="_blank">Visit Partner</a>
+    </div>
+
+  </div>
+
+  <p class="note">
+    Cashback rates shown are demo placeholders. Replace with verified affiliate rates before public launch.
+  </p>
+
+</div>
+
+<script>
+function filterAndSortPartners() {
+  const searchInput = document.getElementById("searchInput").value.toLowerCase();
+  const sectorFilter = document.getElementById("sectorFilter").value;
+  const sortOption = document.getElementById("sortOption").value;
+  const grid = document.getElementById("partnersGrid");
+  const cards = Array.from(document.querySelectorAll(".partner-card"));
+
+  let visibleCards = cards.filter(card => {
+    const name = card.dataset.name.toLowerCase();
+    const sector = card.dataset.sector;
+
+    const matchesSearch = name.includes(searchInput);
+    const matchesSector = sectorFilter === "All" || sector === sectorFilter;
+
+    return matchesSearch && matchesSector;
+  });
+
+  cards.forEach(card => {
+    card.style.display = "none";
+  });
+
+  visibleCards.sort((a,b) => {
+    const nameA = a.dataset.name.toLowerCase();
+    const nameB = b.dataset.name.toLowerCase();
+    const cashbackA = parseFloat(a.dataset.cashback);
+    const cashbackB = parseFloat(b.dataset.cashback);
+    const sectorA = a.dataset.sector.toLowerCase();
+    const sectorB = b.dataset.sector.toLowerCase();
+
+    if (sortOption === "az") return nameA.localeCompare(nameB);
+    if (sortOption === "za") return nameB.localeCompare(nameA);
+    if (sortOption === "high") return cashbackB - cashbackA;
+    if (sortOption === "low") return cashbackA - cashbackB;
+    if (sortOption === "sector") return sectorA.localeCompare(sectorB);
+
+    return 0;
+  });
+
+  visibleCards.forEach(card => {
+    card.style.display = "block";
+    grid.appendChild(card);
+  });
+
+  document.getElementById("partnerCount").innerText =
+    visibleCards.length;
+}
+
+filterAndSortPartners();
+</script>
+
+</body>
+</html>
