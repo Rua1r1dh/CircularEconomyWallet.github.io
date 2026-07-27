@@ -126,7 +126,22 @@ button{
   color:#BDB6A7;
   font-size:0.9rem;
 }
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:15px;
+}
 
+.badge{
+  display:inline-block;
+  background:#1a3526;
+  padding:10px 14px;
+  border-radius:20px;
+  border:1px solid #E1BE73;
+  color:#E1BE73;
+  font-weight:bold;
+}
 @media(max-width:800px){
   .main-grid{
     grid-template-columns:1fr;
@@ -138,6 +153,7 @@ button{
     gap:15px;
   }
 }
+  
 </style>
 </head>
 
@@ -175,7 +191,15 @@ button{
       <h3>Estimated CO₂ Saved</h3>
       <div class="number">0kg</div>
     </div>
+<div class="metric-card">
+  <h3>Partner Clicks</h3>
+  <div class="number">0</div>
+</div>
 
+<div class="metric-card">
+  <h3>Items Reused</h3>
+  <div class="number">0</div>
+</div>
   </div>
 
   <div class="main-grid">
@@ -239,6 +263,18 @@ button{
     </div>
 
   </div>
+<div class="panel" style="margin-top:20px;">
+
+  <h2>Achievements</h2>
+
+  <div class="badges">
+    <span class="badge">🌱 First Purchase</span>
+    <span class="badge">♻️ Reuse Champion</span>
+    <span class="badge">💰 Saved £100</span>
+    <span class="badge">🏆 Circular Hero</span>
+  </div>
+
+</div>
 
 </div>
 
@@ -261,6 +297,7 @@ async function logout() {
   await client.auth.signOut();
   window.location.href = "login.html";
 }
+
 
 checkUser();
 
