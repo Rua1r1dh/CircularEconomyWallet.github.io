@@ -132,11 +132,12 @@ async function login() {
       password
     });
 
-  if (error) {
-    document.getElementById("message").innerText =
-      error.message;
-    return;
-  }
+if (error) {
+  document.getElementById("message").style.color = "red";
+  document.getElementById("message").innerText =
+    "Account not found or password is incorrect.";
+  return;
+}
 
   window.location.href = "dashboard.html";
 }
