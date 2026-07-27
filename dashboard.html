@@ -6,6 +6,78 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
+  .navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:40px;
+}
+
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-box{
+  width:42px;
+  height:42px;
+  border-radius:10px;
+  background:rgba(225,190,115,0.15);
+  border:1px solid rgba(225,190,115,0.25);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#E1BE73;
+  font-weight:bold;
+}
+
+.brand-name{
+  color:#E1BE73;
+  font-weight:bold;
+  font-size:1.2rem;
+  font-family:Georgia,serif;
+}
+
+.nav-links{
+  display:flex;
+  gap:10px;
+}
+
+.nav-links button{
+  width:auto;
+  margin:0;
+  padding:10px 16px;
+}
+
+.hero-section{
+  margin-bottom:30px;
+}
+
+.atlas-title{
+  font-family: "Georgia", serif;
+  font-size:4rem;
+  font-weight:700;
+  color:#E1BE73;
+  line-height:1.1;
+  margin-bottom:12px;
+}
+.atlas-heading{
+  font-family:Georgia,serif;
+  color:#E1BE73;
+  font-size:2rem;
+  margin-top:0;
+}
+.action-bar{
+  display:flex;
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.action-bar button{
+  width:auto;
+  padding:14px 22px;
+}
 body{
   font-family:Arial,sans-serif;
   background:#071a12;
@@ -308,70 +380,136 @@ button{
 
 <div class="dashboard">
 
-  <div class="header">
-    <div>
-      <h1>My Circular Impact Atlas</h1>
-      <p class="small-text">Track your circular economy choices, rewards and sustainability journey.</p>
-    </div>
+<nav class="navbar">
 
-    <button class="logout" onclick="logout()">Log Out</button>
+  <div class="logo-area">
+    <div class="logo-box">CEW</div>
+    <div class="brand-name">Circular Economy Wallet</div>
   </div>
 
-  <div class="atlas-hero">
+  <div class="nav-links">
 
-    <div class="panel score-panel">
-      <h2>Circular Economy Score</h2>
+    <button onclick="window.location.href='dashboard.html'">
+      Dashboard
+    </button>
 
-      <div class="score-ring">
-        <div class="score-number">72%</div>
-      </div>
+    <button onclick="window.location.href='partners.html'">
+      Partners
+    </button>
 
-      <p class="small-text">
-        Your score increases as you browse partners, submit purchases and choose reused, repaired or refurbished products.
-      </p>
+    <button>
+      Rewards
+    </button>
+
+    <button>
+      Purchases
+    </button>
+
+    <button onclick="logout()">
+      Log Out
+    </button>
+
+  </div>
+
+</nav>
+
+<div class="hero-section">
+
+  <h1 class="atlas-title">
+    Rewards for Responsible Choices
+  </h1>
+
+  <p class="small-text">
+    Track your circular economy choices, rewards and sustainability journey.
+  </p>
+
+</div>
+
+<div class="action-bar">
+
+  <button onclick="window.location.href='partners.html'">
+    Browse Partners
+  </button>
+
+  <button class="secondary">
+    Submit Purchase
+  </button>
+
+  <button class="secondary">
+    View Rewards
+  </button>
+
+</div>
+
+   
+
+<div class="atlas-hero">
+
+  <!-- Circular Economy Score -->
+
+  <div class="panel score-panel">
+
+    <h2 class="atlas-heading">
+      Circular Economy Score
+    </h2>
+
+    <div class="score-ring">
+      <div class="score-number">72%</div>
     </div>
 
-    <div class="panel">
-      <h2>Impact Atlas</h2>
+    <p class="small-text">
+      Your score increases as you browse partners, submit purchases and choose reused, repaired and refurbished products.
+    </p>
 
-      <div class="impact-atlas-grid">
+  </div>
 
-        <div class="atlas-tile">
-          <h3>♻️ Reuse</h3>
-          <p class="small-text">Second-hand and refurbished purchases.</p>
-          <div class="tile-bar">
-            <div class="tile-fill" style="width:80%;"></div>
-          </div>
+  <!-- Impact Atlas -->
+
+  <div class="panel">
+
+    <h2 class="atlas-heading">
+      Impact Atlas
+    </h2>
+
+    <div class="impact-atlas-grid">
+
+      <div class="atlas-tile">
+        <h3>♻️ Reuse</h3>
+        <p class="small-text">Second-hand and refurbished purchases.</p>
+        <div class="tile-bar">
+          <div class="tile-fill" style="width:80%;"></div>
         </div>
-
-        <div class="atlas-tile">
-          <h3>💻 Electronics</h3>
-          <p class="small-text">Circular technology and used devices.</p>
-          <div class="tile-bar">
-            <div class="tile-fill" style="width:60%;"></div>
-          </div>
-        </div>
-
-        <div class="atlas-tile">
-          <h3>👕 Fashion</h3>
-          <p class="small-text">Pre-loved clothing and resale platforms.</p>
-          <div class="tile-bar">
-            <div class="tile-fill" style="width:45%;"></div>
-          </div>
-        </div>
-
-        <div class="atlas-tile">
-          <h3>⚡ Energy</h3>
-          <p class="small-text">Low-carbon energy and household choices.</p>
-          <div class="tile-bar">
-            <div class="tile-fill" style="width:25%;"></div>
-          </div>
-        </div>
-
       </div>
+
+      <div class="atlas-tile">
+        <h3>💻 Electronics</h3>
+        <p class="small-text">Circular technology and used devices.</p>
+        <div class="tile-bar">
+          <div class="tile-fill" style="width:60%;"></div>
+        </div>
+      </div>
+
+      <div class="atlas-tile">
+        <h3>👕 Fashion</h3>
+        <p class="small-text">Pre-loved clothing and resale platforms.</p>
+        <div class="tile-bar">
+          <div class="tile-fill" style="width:45%;"></div>
+        </div>
+      </div>
+
+      <div class="atlas-tile">
+        <h3>⚡ Energy</h3>
+        <p class="small-text">Low-carbon energy and household choices.</p>
+        <div class="tile-bar">
+          <div class="tile-fill" style="width:25%;"></div>
+        </div>
+      </div>
+
     </div>
 
   </div>
+
+</div>
 
   <div class="metrics">
 
@@ -410,7 +548,7 @@ button{
   <div class="main-grid">
 
     <div class="panel">
-      <h2>Monthly Impact</h2>
+      <h2 class="atlas-heading">Monthly Impact</h2>
       <p class="small-text">A visual snapshot of circular activity across the year.</p>
 
       <div class="chart">
@@ -446,32 +584,12 @@ button{
       </div>
     </div>
 
-    <div class="panel">
-      <h2>Quick Actions</h2>
-
-      <button onclick="window.location.href='partners.html'">
-        Browse Partners
-      </button>
-
-      <button class="secondary">
-        Submit Purchase
-      </button>
-
-      <button class="secondary">
-        View Rewards
-      </button>
-
-      <p class="small-text">
-        Submit purchases to begin building your real CEW impact profile.
-      </p>
-    </div>
-
   </div>
 
   <div class="main-grid">
 
     <div class="panel">
-      <h2>Your Sustainability Journey</h2>
+      <h2 class="atlas-heading">Your Sustainability Journey</h2>
 
       <div class="journey-step">
         <div class="step-dot">✓</div>
@@ -526,7 +644,7 @@ button{
   </div>
 
   <div class="panel" style="margin-top:25px;">
-    <h2>Achievements</h2>
+    <h2 class="atlas-heading">Achievements</h2>
 
     <div class="badges">
       <span class="badge">🌱 First Purchase</span>
