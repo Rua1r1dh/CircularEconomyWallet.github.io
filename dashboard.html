@@ -6,28 +6,51 @@
 
 <body style="font-family:Arial;background:#071a12;color:white;">
 
-<h1>Welcome to CEW</h1>
+<div class="card">
 
-<p>Points: 0</p>
+  <h1>Welcome to CEW</h1>
 
-<p>Purchases Logged: 0</p>
+  <p>Points: 0</p>
 
-<button onclick="logout()">Logout</button>
+  <p>Purchases Logged: 0</p>
 
+  <button onclick="window.location.href='partners.html'">
+    Browse Partners
+  </button>
+
+  <button>
+    Submit Purchase
+  </button>
+
+  <button onclick="logout()">
+    Log Out
+  </button>
+
+</div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 
 const client = window.supabase.createClient(
   "https://jacbavguwlktbiocsfcz.supabase.co",
-  "YOUR_PUBLISHABLE_KEY"
+  "sb_publishable_4LYtkRuPl4VrnxXz67qRNg_Z8mfGXSN"
 );
 
 async function logout() {
   await client.auth.signOut();
   window.location.href = "login.html";
 }
+  async function checkUser() {
 
+  const { data } = await client.auth.getUser();
+
+  if (!data.user) {
+    window.location.href = "login.html";
+  }
+
+}
+
+checkUser();
 </script>
 
 </body>
