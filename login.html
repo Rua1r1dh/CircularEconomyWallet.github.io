@@ -69,12 +69,12 @@ h2{
 <body>
 
 <div class="card">
-  <h2>Log in</h2>
+  <h2>Log In</h2>
 
   <input id="email" type="email" placeholder="Email">
   <input id="password" type="password" placeholder="Password">
 
-  <button onclick="login()">Log in</button>
+  <button onclick="login()">Log In</button>
 
   <p id="message"></p>
 
@@ -84,8 +84,8 @@ h2{
   </p>
 
   <p>
-    <a href="#">Forgot Password?</a>
-  </p>
+  <a href="#" onclick="resetPassword()">Forgot Password?</a>
+</p>
 
 </div>
 
@@ -95,6 +95,27 @@ const client = window.supabase.createClient(
   "https://jacbavguwlktbiocsfcz.supabase.co",
   "sb_publishable_4LYtkRuPl4VrnxXz67qRNg_Z8mfGXSN"
 );
+    async function resetPassword() {
+
+  const email = document.getElementById("email").value;
+
+  if (!email) {
+    document.getElementById("message").innerText =
+      "Enter your email first.";
+    return;
+  }
+
+  const { error } =
+    await client.auth.resetPasswordForEmail(email);
+
+  if (error) {
+    document.getElementById("message").innerText =
+      error.message;
+    return;
+  }
+
+  alert("Password reset email sent.");
+}
 
 async function login() {
 
@@ -115,8 +136,9 @@ async function login() {
 
   window.location.href = "dashboard.html";
 }
-
-</script>
+    </script>
 
 </body>
+
 </html>
+
