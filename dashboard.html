@@ -2,20 +2,107 @@
 <html>
 <head>
 <title>CEW Dashboard</title>
-  <style>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
 body{
   font-family:Arial,sans-serif;
   background:#071a12;
   color:white;
+  margin:0;
+  padding:40px;
 }
 
-.card{
+.dashboard{
+  max-width:1000px;
+  margin:auto;
+}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.header h1{
+  margin:0;
+  color:#E1BE73;
+}
+
+.logout{
+  width:auto;
+  padding:10px 18px;
+  background:#E1BE73;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+  margin-bottom:30px;
+}
+
+.metric-card{
   background:#11251b;
-  padding:30px;
-  border-radius:12px;
-  width:400px;
-  margin:50px auto;
+  padding:22px;
+  border-radius:14px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.25);
+  border:1px solid rgba(225,190,115,0.15);
+}
+
+.metric-card h3{
+  margin:0 0 10px 0;
+  color:#BDB6A7;
+  font-size:0.95rem;
+}
+
+.metric-card .number{
+  font-size:2rem;
+  font-weight:bold;
+  color:#E1BE73;
+}
+
+.main-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+}
+
+.panel{
+  background:#11251b;
+  padding:25px;
+  border-radius:14px;
+  border:1px solid rgba(225,190,115,0.15);
+}
+
+.bar{
+  margin-bottom:18px;
+}
+
+.bar-label{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:6px;
+  color:#BDB6A7;
+}
+
+.bar-track{
+  background:#1a3526;
+  height:14px;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.bar-fill{
+  height:100%;
+  background:#E1BE73;
+  border-radius:20px;
 }
 
 button{
@@ -26,64 +113,8 @@ button{
   cursor:pointer;
   font-weight:bold;
   border-radius:8px;
+  margin-bottom:12px;
 }
 
-</style>
-</head>
-
-<body>
-
-<div class="card">
-
-  <h1>Welcome to CEW</h1>
-
-  <p>Points: 0</p>
-
-  <p>Purchases Logged: 0</p>
-
-  <button onclick="window.location.href='partners.html'">
-    Browse Partners
-  </button>
-
-  <br><br>
-
-  <button>
-    Submit Purchase
-  </button>
-
-  <br><br>
-
-  <button onclick="logout()">
-    Log Out
-  </button>
-
-</div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
-
-const client = window.supabase.createClient(
-  "https://jacbavguwlktbiocsfcz.supabase.co",
-  "sb_publishable_4LYtkRuPl4VrnxXz67qRNg_Z8mfGXSN"
-);
-
-async function logout() {
-  await client.auth.signOut();
-  window.location.href = "login.html";
-}
-  async function checkUser() {
-
-  const { data } = await client.auth.getUser();
-
-  if (!data.user) {
-    window.location.href = "login.html";
-  }
-
-}
-
-checkUser();
-  
-</script>
-
-</body>
-</html>
+.secondary{
+  background:#1a3526
