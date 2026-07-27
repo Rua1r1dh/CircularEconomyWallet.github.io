@@ -117,4 +117,154 @@ button{
 }
 
 .secondary{
-  background:#1a3526
+  background:#1a3526;
+  color:white;
+  border:1px solid #E1BE73;
+}
+
+.small-text{
+  color:#BDB6A7;
+  font-size:0.9rem;
+}
+
+@media(max-width:800px){
+  .main-grid{
+    grid-template-columns:1fr;
+  }
+
+  .header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <div class="header">
+    <div>
+      <h1>Welcome to CEW</h1>
+      <p class="small-text">Track your circular economy impact and rewards.</p>
+    </div>
+
+    <button class="logout" onclick="logout()">Log Out</button>
+  </div>
+
+  <div class="metrics">
+
+    <div class="metric-card">
+      <h3>Total Points</h3>
+      <div class="number">0</div>
+    </div>
+
+    <div class="metric-card">
+      <h3>Purchases Logged</h3>
+      <div class="number">0</div>
+    </div>
+
+    <div class="metric-card">
+      <h3>Circular Spend</h3>
+      <div class="number">£0</div>
+    </div>
+
+    <div class="metric-card">
+      <h3>Estimated CO₂ Saved</h3>
+      <div class="number">0kg</div>
+    </div>
+
+  </div>
+
+  <div class="main-grid">
+
+    <div class="panel">
+      <h2>Impact Overview</h2>
+
+      <div class="bar">
+        <div class="bar-label">
+          <span>Reuse Activity</span>
+          <span>0%</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:0%;"></div>
+        </div>
+      </div>
+
+      <div class="bar">
+        <div class="bar-label">
+          <span>Reward Progress</span>
+          <span>0%</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:0%;"></div>
+        </div>
+      </div>
+
+      <div class="bar">
+        <div class="bar-label">
+          <span>Partner Engagement</span>
+          <span>0%</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:0%;"></div>
+        </div>
+      </div>
+
+      <p class="small-text">
+        Your impact dashboard will update as you browse partners and submit purchases.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>Quick Actions</h2>
+
+      <button onclick="window.location.href='partners.html'">
+        Browse Partners
+      </button>
+
+      <button class="secondary">
+        Submit Purchase
+      </button>
+
+      <button class="secondary">
+        View Rewards
+      </button>
+
+      <p class="small-text">
+        Next: submit purchases to start building your CEW impact profile.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+const client = window.supabase.createClient(
+  "https://jacbavguwlktbiocsfcz.supabase.co",
+  "sb_publishable_4LYtkRuPl4VrnxXz67qRNg_Z8mfGXSN"
+);
+
+async function checkUser() {
+  const { data } = await client.auth.getUser();
+
+  if (!data.user) {
+    window.location.href = "login.html";
+  }
+}
+
+async function logout() {
+  await client.auth.signOut();
+  window.location.href = "login.html";
+}
+
+checkUser();
+
+</script>
+
+</body>
+</html>
