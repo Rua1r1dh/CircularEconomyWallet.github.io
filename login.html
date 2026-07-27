@@ -18,46 +18,69 @@
       height:100vh;
     }
 
-   .card{
-background:#11251b;
-padding:30px;
-border-radius:12px;
-width:350px;
-margin:auto;
-
+.card{
+  background:#11251b;
+  padding:30px;
+  border-radius:12px;
+  width:400px;
+  margin:auto;
 }
 
-    input{
-      wth:100%;
-      padding:12px;
-      margin-bottom:12px;
-    }
+input{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  box-sizing:border-box;
+}
 
-    button{
-      wth:100%;
-      padding:12px;
-      background:#E1BE73;
-      border:none;
-      cursor:pointer;
-      font-weight:bold;
-    }
+button{
+  width:100%;
+  padding:12px;
+  background:#E1BE73;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+  box-sizing:border-box;
+  border-radius:8px;
+}
+#message{
+  min-height:20px;
+}
+input,
+button{
+  border-radius:8px;
+}
+
+.card p{
+  text-align:center;
+}
+
+.card a{
+  color:#E1BE73;
+}
+
+h2{
+  margin-bottom:25px;
+  text-align:left;
+}
+
   </style>
 </head>
 <body>
 
 <div class="card">
-  <h2>Login</h2>
+  <h2>Log in</h2>
 
   <input id="email" type="email" placeholder="Email">
   <input id="password" type="password" placeholder="Password">
 
-  <button onclick="login()">Login</button>
+  <button onclick="login()">Log in</button>
 
   <p id="message"></p>
 
   <p>
     Don't have an account?
-    <a href="signup.html">Create 
+    <a href="signup.html">Create Account</a>
   </p>
 
   <p>
