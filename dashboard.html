@@ -15,7 +15,7 @@ body{
 }
 
 .dashboard{
-  max-width:1000px;
+  max-width:1150px;
   margin:auto;
 }
 
@@ -29,6 +29,12 @@ body{
 .header h1{
   margin:0;
   color:#E1BE73;
+  font-size:2.2rem;
+}
+
+.small-text{
+  color:#BDB6A7;
+  font-size:0.95rem;
 }
 
 .logout{
@@ -41,25 +47,115 @@ body{
   cursor:pointer;
 }
 
+/* Hero Atlas Section */
+
+.atlas-hero{
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  gap:25px;
+  margin-bottom:25px;
+}
+
+.panel{
+  background:#11251b;
+  padding:25px;
+  border-radius:18px;
+  border:1px solid rgba(225,190,115,0.18);
+  box-shadow:0 10px 28px rgba(0,0,0,0.25);
+}
+
+.score-panel{
+  text-align:center;
+}
+
+.score-ring{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:
+    conic-gradient(#E1BE73 0deg, #E1BE73 259deg, #1a3526 259deg, #1a3526 360deg);
+  margin:25px auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.score-ring::before{
+  content:"";
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:#11251b;
+  position:absolute;
+}
+
+.score-number{
+  position:relative;
+  z-index:2;
+  font-size:2.3rem;
+  font-weight:bold;
+  color:#E1BE73;
+}
+
+.impact-atlas-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.atlas-tile{
+  background:#1a3526;
+  padding:18px;
+  border-radius:14px;
+  border:1px solid rgba(225,190,115,0.2);
+}
+
+.atlas-tile h3{
+  margin:0 0 10px 0;
+  color:#E1BE73;
+}
+
+.tile-bar{
+  background:#071a12;
+  height:10px;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:12px;
+}
+
+.tile-fill{
+  height:100%;
+  background:#E1BE73;
+  border-radius:20px;
+}
+
+/* Metrics */
+
 .metrics{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:20px;
-  margin-bottom:30px;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:18px;
+  margin-bottom:25px;
 }
 
 .metric-card{
   background:#11251b;
   padding:22px;
-  border-radius:14px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.25);
-  border:1px solid rgba(225,190,115,0.15);
+  border-radius:16px;
+  border:1px solid rgba(225,190,115,0.18);
+  transition:0.25s;
+}
+
+.metric-card:hover{
+  transform:translateY(-4px);
+  border-color:#E1BE73;
 }
 
 .metric-card h3{
   margin:0 0 10px 0;
   color:#BDB6A7;
-  font-size:0.95rem;
+  font-size:0.9rem;
 }
 
 .metric-card .number{
@@ -68,42 +164,80 @@ body{
   color:#E1BE73;
 }
 
+/* Main Grid */
+
 .main-grid{
   display:grid;
   grid-template-columns:2fr 1fr;
-  gap:20px;
+  gap:25px;
+  margin-bottom:25px;
 }
 
-.panel{
-  background:#11251b;
-  padding:25px;
-  border-radius:14px;
-  border:1px solid rgba(225,190,115,0.15);
+/* Monthly Chart */
+
+.chart{
+  display:flex;
+  align-items:flex-end;
+  gap:14px;
+  height:150px;
+  margin-top:25px;
 }
 
-.bar{
+.chart-column{
+  flex:1;
+  text-align:center;
+}
+
+.chart-bar{
+  background:#E1BE73;
+  border-radius:8px 8px 0 0;
+  margin-bottom:8px;
+}
+
+.chart-label{
+  color:#BDB6A7;
+  font-size:0.8rem;
+}
+
+/* Journey */
+
+.journey-step{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
   margin-bottom:18px;
 }
 
-.bar-label{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:6px;
-  color:#BDB6A7;
-}
-
-.bar-track{
-  background:#1a3526;
-  height:14px;
-  border-radius:20px;
-  overflow:hidden;
-}
-
-.bar-fill{
-  height:100%;
+.step-dot{
+  width:28px;
+  height:28px;
+  border-radius:50%;
   background:#E1BE73;
-  border-radius:20px;
+  color:#071a12;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  flex-shrink:0;
 }
+
+.step-dot.locked{
+  background:#1a3526;
+  color:#BDB6A7;
+  border:1px solid rgba(225,190,115,0.3);
+}
+
+.step-text strong{
+  color:white;
+}
+
+.step-text p{
+  margin:4px 0 0 0;
+  color:#BDB6A7;
+  font-size:0.9rem;
+}
+
+/* Buttons */
 
 button{
   width:100%;
@@ -122,10 +256,18 @@ button{
   border:1px solid #E1BE73;
 }
 
-.small-text{
+/* Activity */
+
+.activity{
+  background:#1a3526;
+  padding:14px;
+  border-radius:10px;
+  margin-bottom:10px;
   color:#BDB6A7;
-  font-size:0.9rem;
 }
+
+/* Badges */
+
 .badges{
   display:flex;
   flex-wrap:wrap;
@@ -142,8 +284,14 @@ button{
   color:#E1BE73;
   font-weight:bold;
 }
-@media(max-width:800px){
+
+@media(max-width:850px){
+  .atlas-hero,
   .main-grid{
+    grid-template-columns:1fr;
+  }
+
+  .impact-atlas-grid{
     grid-template-columns:1fr;
   }
 
@@ -153,7 +301,6 @@ button{
     gap:15px;
   }
 }
-  
 </style>
 </head>
 
@@ -163,11 +310,67 @@ button{
 
   <div class="header">
     <div>
-      <h1>Welcome to CEW</h1>
-      <p class="small-text">Track your circular economy impact and rewards.</p>
+      <h1>My Circular Impact Atlas</h1>
+      <p class="small-text">Track your circular economy choices, rewards and sustainability journey.</p>
     </div>
 
     <button class="logout" onclick="logout()">Log Out</button>
+  </div>
+
+  <div class="atlas-hero">
+
+    <div class="panel score-panel">
+      <h2>Circular Economy Score</h2>
+
+      <div class="score-ring">
+        <div class="score-number">72%</div>
+      </div>
+
+      <p class="small-text">
+        Your score increases as you browse partners, submit purchases and choose reused, repaired or refurbished products.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>Impact Atlas</h2>
+
+      <div class="impact-atlas-grid">
+
+        <div class="atlas-tile">
+          <h3>♻️ Reuse</h3>
+          <p class="small-text">Second-hand and refurbished purchases.</p>
+          <div class="tile-bar">
+            <div class="tile-fill" style="width:80%;"></div>
+          </div>
+        </div>
+
+        <div class="atlas-tile">
+          <h3>💻 Electronics</h3>
+          <p class="small-text">Circular technology and used devices.</p>
+          <div class="tile-bar">
+            <div class="tile-fill" style="width:60%;"></div>
+          </div>
+        </div>
+
+        <div class="atlas-tile">
+          <h3>👕 Fashion</h3>
+          <p class="small-text">Pre-loved clothing and resale platforms.</p>
+          <div class="tile-bar">
+            <div class="tile-fill" style="width:45%;"></div>
+          </div>
+        </div>
+
+        <div class="atlas-tile">
+          <h3>⚡ Energy</h3>
+          <p class="small-text">Low-carbon energy and household choices.</p>
+          <div class="tile-bar">
+            <div class="tile-fill" style="width:25%;"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
   <div class="metrics">
@@ -191,55 +394,56 @@ button{
       <h3>Estimated CO₂ Saved</h3>
       <div class="number">0kg</div>
     </div>
-<div class="metric-card">
-  <h3>Partner Clicks</h3>
-  <div class="number">0</div>
-</div>
 
-<div class="metric-card">
-  <h3>Items Reused</h3>
-  <div class="number">0</div>
-</div>
+    <div class="metric-card">
+      <h3>Partner Clicks</h3>
+      <div class="number">0</div>
+    </div>
+
+    <div class="metric-card">
+      <h3>Items Reused</h3>
+      <div class="number">0</div>
+    </div>
+
   </div>
 
   <div class="main-grid">
 
     <div class="panel">
-      <h2>Impact Overview</h2>
+      <h2>Monthly Impact</h2>
+      <p class="small-text">A visual snapshot of circular activity across the year.</p>
 
-      <div class="bar">
-        <div class="bar-label">
-          <span>Reuse Activity</span>
-          <span>0%</span>
+      <div class="chart">
+        <div class="chart-column">
+          <div class="chart-bar" style="height:40px;"></div>
+          <div class="chart-label">Jan</div>
         </div>
-        <div class="bar-track">
-          <div class="bar-fill" style="width:0%;"></div>
+
+        <div class="chart-column">
+          <div class="chart-bar" style="height:70px;"></div>
+          <div class="chart-label">Feb</div>
+        </div>
+
+        <div class="chart-column">
+          <div class="chart-bar" style="height:55px;"></div>
+          <div class="chart-label">Mar</div>
+        </div>
+
+        <div class="chart-column">
+          <div class="chart-bar" style="height:95px;"></div>
+          <div class="chart-label">Apr</div>
+        </div>
+
+        <div class="chart-column">
+          <div class="chart-bar" style="height:80px;"></div>
+          <div class="chart-label">May</div>
+        </div>
+
+        <div class="chart-column">
+          <div class="chart-bar" style="height:115px;"></div>
+          <div class="chart-label">Jun</div>
         </div>
       </div>
-
-      <div class="bar">
-        <div class="bar-label">
-          <span>Reward Progress</span>
-          <span>0%</span>
-        </div>
-        <div class="bar-track">
-          <div class="bar-fill" style="width:0%;"></div>
-        </div>
-      </div>
-
-      <div class="bar">
-        <div class="bar-label">
-          <span>Partner Engagement</span>
-          <span>0%</span>
-        </div>
-        <div class="bar-track">
-          <div class="bar-fill" style="width:0%;"></div>
-        </div>
-      </div>
-
-      <p class="small-text">
-        Your impact dashboard will update as you browse partners and submit purchases.
-      </p>
     </div>
 
     <div class="panel">
@@ -258,23 +462,81 @@ button{
       </button>
 
       <p class="small-text">
-        Next: submit purchases to start building your CEW impact profile.
+        Submit purchases to begin building your real CEW impact profile.
       </p>
     </div>
 
   </div>
-<div class="panel" style="margin-top:20px;">
 
-  <h2>Achievements</h2>
+  <div class="main-grid">
 
-  <div class="badges">
-    <span class="badge">🌱 First Purchase</span>
-    <span class="badge">♻️ Reuse Champion</span>
-    <span class="badge">💰 Saved £100</span>
-    <span class="badge">🏆 Circular Hero</span>
+    <div class="panel">
+      <h2>Your Sustainability Journey</h2>
+
+      <div class="journey-step">
+        <div class="step-dot">✓</div>
+        <div class="step-text">
+          <strong>Joined CEW</strong>
+          <p>Your account has been created.</p>
+        </div>
+      </div>
+
+      <div class="journey-step">
+        <div class="step-dot">✓</div>
+        <div class="step-text">
+          <strong>Explored Partners</strong>
+          <p>Browse circular economy retailers and start earning rewards.</p>
+        </div>
+      </div>
+
+      <div class="journey-step">
+        <div class="step-dot locked">3</div>
+        <div class="step-text">
+          <strong>First Purchase Logged</strong>
+          <p>Submit your first circular purchase to unlock impact tracking.</p>
+        </div>
+      </div>
+
+      <div class="journey-step">
+        <div class="step-dot locked">4</div>
+        <div class="step-text">
+          <strong>Circular Champion</strong>
+          <p>Build points, reduce waste and improve your CEW score.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="panel">
+      <h2>Recent Activity</h2>
+
+      <div class="activity">
+        No purchases logged yet.
+      </div>
+
+      <div class="activity">
+        No partner visits recorded yet.
+      </div>
+
+      <div class="activity">
+        Start by browsing partners.
+      </div>
+    </div>
+
   </div>
 
-</div>
+  <div class="panel" style="margin-top:25px;">
+    <h2>Achievements</h2>
+
+    <div class="badges">
+      <span class="badge">🌱 First Purchase</span>
+      <span class="badge">♻️ Reuse Champion</span>
+      <span class="badge">💰 Saved £100</span>
+      <span class="badge">🏆 Circular Hero</span>
+      <span class="badge">💻 Refurb Tech Buyer</span>
+      <span class="badge">👕 Fashion Recycler</span>
+    </div>
+  </div>
 
 </div>
 
@@ -297,7 +559,6 @@ async function logout() {
   await client.auth.signOut();
   window.location.href = "login.html";
 }
-
 
 checkUser();
 
