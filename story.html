@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEW Story</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+}
+
+.panel{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:2rem;
+}
+
+h1{
+    font-size:clamp(2rem,5vw,5rem);
+    margin-bottom:1rem;
+}
+
+p{
+    font-size:clamp(1rem,2vw,1.5rem);
+    max-width:800px;
+    opacity:0.85;
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card{
+    width:260px;
+    height:160px;
+    background:linear-gradient(135deg,#00d084,#00a3ff);
+    border-radius:20px;
+    margin-top:30px;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+.receipt{
+    font-size:7rem;
+    margin-top:30px;
+}
+
+.metrics{
+    display:flex;
+    gap:50px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.metric{
+    text-align:center;
+}
+
+.metric h2{
+    font-size:3rem;
+    color:#00d084;
+}
+
+.points{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:#00d084;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2rem;
+    color:#000;
+    margin-top:40px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+
+.users{
+    font-size:6rem;
+    margin-top:30px;
+}
+
+.final-button{
+    margin-top:40px;
+    padding:20px 40px;
+    font-size:1.2rem;
+    border:none;
+    border-radius:10px;
+    background:#00d084;
+    color:black;
+    cursor:pointer;
+    font-weight:bold;
+}
+</style>
+
+</head>
+<body>
+
+<section class="panel fade">
+    <h1>Every Pound You Spend Shapes The World Around You</h1>
+    <p>Imagine if your everyday purchases generated measurable impact.</p>
+    <div class="card"></div>
+</section>
+
+<section class="panel fade">
+    <h1>Spend With Purpose</h1>
+    <p>Your purchase starts a journey.</p>
+    <div style="font-size:7rem;">💳</div>
+</section>
+
+<section class="panel fade">
+    <h1>Track Your Impact</h1>
+    <p>Purchases become measurable sustainability outcomes.</p>
+    <div class="receipt">🧾</div>
+</section>
+
+<section class="panel fade">
+    <h1>Your Impact Grows</h1>
+
+    <div class="metrics">
+
+        <div class="metric">
+            <h2>125kg</h2>
+            <p>CO₂ Saved</p>
+        </div>
+
+        <div class="metric">
+            <h2>48</h2>
+            <p>Sustainable Purchases</p>
+        </div>
+
+        <div class="metric">
+            <h2>£820</h2>
+            <p>Local Spend</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="panel fade">
+    <h1>Impact Becomes Rewards</h1>
+    <p>Earn CEW Points every time you make a sustainable choice.</p>
+
+    <div class="points">
+        1,240
+    </div>
+</section>
+
+<section class="panel fade">
+    <h1>A Movement, Not Just An App</h1>
+
+    <div class="users">
+        👤 → 👥 → 🌍
+    </div>
+
+    <p style="margin-top:20px;">
+        From one individual to millions of people driving a circular economy.
+    </p>
+</section>
+
+<section class="panel fade">
+    <h1>Join The Circular Economy Wallet</h1>
+
+    <p>
+        Turn everyday spending into measurable impact, rewards and real change.
+    </p>
+
+    <button class="final-button">
+        Sign Up
+    </button>
+</section>
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},{
+    threshold:0.3
+});
+
+document.querySelectorAll(".fade").forEach(section=>{
+    observer.observe(section);
+});
+
+</script>
+
+</body>
+</html>
